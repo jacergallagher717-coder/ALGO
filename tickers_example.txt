@@ -1,0 +1,47 @@
+# Example Ticker List for Earnings Volatility Screener
+# One ticker per line, or space-separated
+# Lines starting with # are ignored
+
+# Mega-cap tech
+AAPL
+MSFT
+GOOGL
+AMZN
+NVDA
+META
+TSLA
+
+# Semiconductors (high vol)
+AMD
+INTC
+MU
+QCOM
+
+# Cloud/SaaS (frequent earnings)
+CRM
+SNOW
+DDOG
+NET
+
+# Streaming/Media
+NFLX
+DIS
+ROKU
+
+# Fintech
+SQ
+PYPL
+COIN
+
+# E-commerce
+SHOP
+ETSY
+EBAY
+
+# Other high-vol names
+UBER
+SNAP
+DOCU
+ZM
+
+# Add your own tickers below:

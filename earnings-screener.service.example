@@ -1,0 +1,38 @@
+# Systemd service file for Earnings Volatility Screener
+#
+# Installation instructions:
+# 1. Edit this file and replace /path/to/ALGO with your actual path
+# 2. Replace 'youruser' with your username
+# 3. Copy to systemd directory:
+#    sudo cp earnings-screener.service.example /etc/systemd/system/earnings-screener.service
+# 4. Enable and start:
+#    sudo systemctl enable earnings-screener
+#    sudo systemctl start earnings-screener
+# 5. Check status:
+#    sudo systemctl status earnings-screener
+# 6. View logs:
+#    sudo journalctl -u earnings-screener -f
+
+[Unit]
+Description=Earnings Volatility Screener - Daily Automated Trading Signals
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=youruser
+Group=youruser
+WorkingDirectory=/path/to/ALGO
+ExecStart=/path/to/ALGO/venv/bin/python scheduler.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables (alternative to config.ini)
+# Environment="POLYGON_API_KEY=your_key_here"
+# Environment="TELEGRAM_BOT_TOKEN=your_token_here"
+# Environment="TELEGRAM_CHAT_ID=your_chat_id_here"
+
+[Install]
+WantedBy=multi-user.target

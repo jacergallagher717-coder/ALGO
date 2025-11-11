@@ -1,0 +1,32 @@
+# Configuration Template for Earnings Volatility Screener
+# Copy this file to 'config.ini' and fill in your API keys
+
+[API]
+# Polygon.io API Key (optional - provides more reliable option data)
+# Get your free API key at: https://polygon.io/
+# Leave empty to use yfinance (free but less reliable)
+polygon_api_key =
+
+# Telegram Bot Configuration (optional - for trade alerts)
+# How to set up:
+# 1. Message @BotFather on Telegram
+# 2. Create a new bot with /newbot
+# 3. Copy the bot token below
+# 4. Get your chat ID by messaging @userinfobot
+telegram_bot_token =
+telegram_chat_id =
+
+[STRATEGY]
+# Strategy thresholds (can be tuned)
+iv_rv_threshold_recommended = 1.25
+iv_rv_threshold_consider = 1.1
+slope_threshold = -0.00406
+volume_threshold_recommended = 1500000
+volume_threshold_consider = 1000000
+
+[BACKTEST]
+# Backtesting parameters
+starting_capital = 10000
+kelly_fraction = 0.25
+monte_carlo_simulations = 1000
+monte_carlo_trades = 252
